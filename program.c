@@ -16,7 +16,7 @@ int sprawdzanie(){
                         if(osoby[z].ID == id){
                                 i=z;
                                 printf("ID zajete, podaj inne.");
-                                //getchar();
+                                getchar();
                         }
         }while(osoby[i].ID == id);
         return id;
@@ -45,20 +45,20 @@ int wyswietlanie() {
             if (osoby[h(id,i)].ID == id) {
             //sprawdzanie hashowanegoid z naszym id podanym.
                 printf("Do podanego ID: %i przypisane jest nazwisko: %s",id,osoby[(id%61+i*(1+id%59))%61].nazwisko);
-                //getchar();
+                getchar();
                 return;
             }
 
             if (osoby[h(id,i)].ID == 0) {
                 printf("Takiego ID nie ma na liscie...");
-                //getchar();
+                getchar();
                 return;
             } else {
                 i++; //jezeli nie znajdzie takido id i++
             }
 
             printf("Takiego ID nie ma na liscie...");
-            //getchar();
+            getchar();
             return;
         }
 }
@@ -104,7 +104,7 @@ int main() {
                                     }
                                     printf("Nazwisko zostalo dodane na pozycji: %i...",numerh);
                                 }
-                                //getchar();
+                                getchar();
                         break;
                         case 2:
                                 wyswietlanie();
@@ -114,14 +114,14 @@ int main() {
                                 {
                                     printf("\n\t#%2i|%5i|%10s",z,osoby[z].ID,osoby[z].nazwisko);
                                 }
-                                //getchar();
+                                getchar();
                         break;
                         case 0:
                                 return 0;
                         break;
                         default:
                                 printf("Wprowadz odpowienia wartosc...");
-                                //getchar();
+                                getchar();
                         break;
                 }
         }
