@@ -40,11 +40,12 @@ int wyswietlanie() {
 
         printf("\n\n\nPodaj ID:");
         scanf("%i",&id);
-        while(i<61)
+        do
         {
+            //printf("id: %i | i: %i\n\n", id, i);
             if (osoby[h(id,i)].ID == id) {
             //sprawdzanie hashowanegoid z naszym id podanym.
-                printf("Do podanego ID: %i przypisane jest nazwisko: %s",id,osoby[(id%61+i*(1+id%59))%61].nazwisko);
+                printf("Do podanego ID: %i przypisane jest nazwisko: %s",id,osoby[h(id,i)].nazwisko);
                 getchar();
                 return;
             }
@@ -56,11 +57,12 @@ int wyswietlanie() {
             } else {
                 i++; //jezeli nie znajdzie takido id i++
             }
+        } while(i<61);
 
-            printf("Takiego ID nie ma na liscie...");
-            getchar();
-            return;
-        }
+    //If not found
+    printf("Takiego ID nie ma na liscie...");
+    getchar();
+    return;
 }
 
 //Hashing function
